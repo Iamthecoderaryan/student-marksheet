@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marksheet</title>
+</head>
+<body>
+    <h2>Enter Marks for Five Students</h2>
+    <form action="https://your-replit-username.repl.co/process-marks" method="POST">
+        <table border="1">
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Subject 1</th>
+                <th>Subject 2</th>
+                <th>Subject 3</th>
+                <th>Subject 4</th>
+                <th>Subject 5</th>
+            </tr>
+            
+            <!-- Input rows for five students -->
+            <script>
+                for(let i=1; i<=5; i++) {
+                    document.write('<tr>');
+                    document.write(`<td><input type="text" name="roll${i}" required></td>`);
+                    document.write(`<td><input type="text" name="name${i}" required></td>`);
+                    for(let j=1; j<=5; j++) {
+                        document.write(`<td><input type="number" name="marks${i}_${j}" required></td>`);
+                    }
+                    document.write('</tr>');
+                }
+            </script>
+        </table>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
